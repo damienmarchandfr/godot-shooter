@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://boqo1i452hbpr"]
+
+[ext_resource type="PackedScene" uid="uid://ci8d6lw1v1ygo" path="res://entities/player.tscn" id="1_rdq12"]
+[ext_resource type="PackedScene" uid="uid://bwwl8gn83l4yr" path="res://entities/meteor.tscn" id="2_a7dx0"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." node_paths=PackedStringArray("game_scene") instance=ExtResource("1_rdq12")]
+position = Vector2(333, 250)
+game_scene = NodePath("..")
+
+[node name="Meteor" parent="." instance=ExtResource("2_a7dx0")]
+position = Vector2(831, 231)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqrvlug7mcf26"]
+
+[ext_resource type="PackedScene" uid="uid://b7t4rn8b0xbys" path="res://entities/custom_button.tscn" id="1_tyaed"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="ButtonStart" parent="." instance=ExtResource("1_tyaed")]
+position = Vector2(576, 296)
+text_sprite = "start"
+
+[node name="ButtonExit" parent="." instance=ExtResource("1_tyaed")]
+position = Vector2(576, 384)
+text_sprite = "exit"

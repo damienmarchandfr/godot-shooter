@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7t4rn8b0xbys"]
+
+[ext_resource type="Script" path="res://entities/custom_button.gd" id="1_knr2e"]
+[ext_resource type="Texture2D" uid="uid://ra6j4r5vx4v0" path="res://assets.png" id="1_r5a1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5r6i"]
+size = Vector2(208, 64)
+
+[node name="CustomButton" type="Area2D"]
+script = ExtResource("1_knr2e")
+
+[node name="Border" type="Sprite2D" parent="."]
+texture = ExtResource("1_r5a1r")
+region_enabled = true
+region_rect = Rect2(1649.82, 32.5303, 215.133, 64.7713)
+
+[node name="Start" type="Sprite2D" parent="."]
+texture = ExtResource("1_r5a1r")
+region_enabled = true
+region_rect = Rect2(1914.23, 41.8677, 135.711, 41.6387)
+
+[node name="Exit" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_r5a1r")
+region_enabled = true
+region_rect = Rect2(1913.38, 98.4919, 110.652, 40.8427)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j5r6i")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

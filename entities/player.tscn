@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci8d6lw1v1ygo"]
+
+[ext_resource type="Texture2D" uid="uid://ra6j4r5vx4v0" path="res://assets.png" id="1_5irno"]
+[ext_resource type="Script" path="res://entities/player.gd" id="1_s87r7"]
+
+[node name="Player" type="CharacterBody2D"]
+rotation = 1.5708
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 0.0
+script = ExtResource("1_s87r7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.200001, -15)
+texture = ExtResource("1_5irno")
+region_enabled = true
+region_rect = Rect2(38.0755, 137.888, 125.045, 167.005)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.200001, -15)
+polygon = PackedVector2Array(-0.200001, -81, 57.8, 78, -60.2, 78)
+
+[node name="BulletSpawner" type="Node2D" parent="."]
+position = Vector2(0, -78)
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
