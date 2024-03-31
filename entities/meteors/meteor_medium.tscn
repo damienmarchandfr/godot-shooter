@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmlhvjto54846"]
+
+[ext_resource type="PackedScene" uid="uid://dgnb7aatk7cuf" path="res://entities/meteors/meteor.tscn" id="1_70k71"]
+[ext_resource type="Texture2D" uid="uid://ra6j4r5vx4v0" path="res://assets.png" id="2_au1mo"]
+[ext_resource type="Script" path="res://entities/meteors/meteor_medium.gd" id="2_w43dr"]
+
+[node name="MeteorMedium" instance=ExtResource("1_70k71")]
+script = ExtResource("2_w43dr")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_au1mo")
+region_enabled = true
+region_rect = Rect2(340.323, 86.083, 139.799, 109.493)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-51, -50, -45, 40, 72, 49, 63, -53)

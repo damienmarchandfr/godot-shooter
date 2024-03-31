@@ -3,7 +3,7 @@ extends Area2D
 
 var direction_and_speed : Vector2 = Vector2.ZERO
 
-var speed : float = 10
+var speed : float = 600
 
 @onready
 var sp_1 = $Sprite1
@@ -34,7 +34,7 @@ func _process(delta):
 		sprites[self.current_sprite_index].rotation = angle
 		$CollisionShape2D.rotation = angle
 		
-	self.position = self.position + self.direction_and_speed
+	self.position = self.position + self.direction_and_speed * delta
 
 func set_angle(angle : float):
 	self.direction_and_speed.x += (cos(angle) - sin(angle))*self.speed

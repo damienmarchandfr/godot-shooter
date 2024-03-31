@@ -2,13 +2,14 @@ class_name Meteor
 extends Area2D
 
 var game_scene : GameScene
+var storage : Storage
 var direction : Vector2 = Vector2.ZERO
 var speed : float = 0
 var rotation_speed : float = deg_to_rad(30)
 
-var number_of_meteor = 6
+var number_of_last = 0
 
-var small_meteor_scene = preload("res://entities/meteors/inherited/meteor_small.tscn")
+var invincibility = true
 
 func _ready():
 	var random_angle = deg_to_rad(randi_range(0,360))	
@@ -29,14 +30,18 @@ func _process(delta):
 
 func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	var is_bullet = area.is_in_group("bullet")
-	if is_bullet:
-		explode()
+	if is_bullet && !invincibility:
+		area.queue_free()
+		call_deferred('spawn_small_meteors')
 		queue_free()
+		game_scene.storage.increment_score()
 
-func init(game : GameScene):
+func init(game : GameScene,s : Storage):
 	game_scene = game
+	storage = s
+
+func spawn_small_meteors():
+	print('Must increment spawn_small_meteors')
 	
-func explode():
-	print("Parent : explode and must spawn " + str(number_of_meteor))
-
-
+func _on_timer_invincibility_timeout():
+	invincibility = false

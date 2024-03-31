@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8kuebldrxnnl"]
+
+[ext_resource type="PackedScene" uid="uid://b0knkdvkujfkj" path="res://entities/meteors/meteor_big.tscn" id="1_4as7f"]
+
+[node name="MeteorBig3" instance=ExtResource("1_4as7f")]
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(554.566, 634.398, 270.384, 278.577)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-11.4, -27.3069, -20.4, -25.4578, -25.6, -22.3759, -28.4, -19.7563, -31.4, -6.35024, -28.4, -3.42247, -23.8, 3.20354, -18.8, 4.43628, -14.4, 5.05265, -13.4, 6.59359, -12.4, 7.05587, -6.2, 11.2164, 3, 11.5246, 12.2, 10.4459, 13.8, 9.52136, 19, 3.04944, 19.8, 0.429859, 18.2, -2.03563, 15.2, -4.50112, 14, -5.88796, 14.4, -9.43211, 15.8, -15.1336, 9.4, -18.0613, 2.2, -20.2186, -0.6, -21.7596, -3.4, -26.2283, -6.6, -27.1528)

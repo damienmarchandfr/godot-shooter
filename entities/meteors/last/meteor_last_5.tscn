@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://67cqf627foj8"]
+
+[ext_resource type="PackedScene" uid="uid://cx6fb6d32f0tl" path="res://entities/meteors/meteor_last.tscn" id="1_ieci1"]
+
+[node name="MeteorLast5" instance=ExtResource("1_ieci1")]
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(1209.99, 94.4718, 59.978, 70.8076)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(5, -33, -19, -20, -24, -6, -26, 17, -23, 22, -3, 34, 3, 34, 21, 23, 25, 17, 26, -20)
