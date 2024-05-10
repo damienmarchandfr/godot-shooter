@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6xsrps4debvq"]
+
+[ext_resource type="Texture2D" uid="uid://ra6j4r5vx4v0" path="res://assets.png" id="1_g2rpy"]
+
+[node name="Node2D" type="Area2D"]
+
+[node name="Red" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_g2rpy")
+region_enabled = true
+region_rect = Rect2(547.08, 2265.38, 24.5668, 24.3777)
+
+[node name="Purple" type="Sprite2D" parent="."]
+texture = ExtResource("1_g2rpy")
+region_enabled = true
+region_rect = Rect2(554.917, 2299.92, 22.5668, 23.103)
