@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://boqo1i452hbpr"]
+[gd_scene load_steps=6 format=3 uid="uid://boqo1i452hbpr"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_202ao"]
 [ext_resource type="PackedScene" uid="uid://ci8d6lw1v1ygo" path="res://entities/player.tscn" id="1_rdq12"]
 [ext_resource type="PackedScene" uid="uid://b5jhf37g8jawg" path="res://entities/meteors/meteor_spawn.tscn" id="3_us60x"]
 [ext_resource type="PackedScene" uid="uid://brptat3xp47ay" path="res://entities/storage.tscn" id="4_dyd3e"]
+[ext_resource type="PackedScene" uid="uid://c4l2xx0baajk5" path="res://entities/space_man/space_man_boss.tscn" id="5_f3m6q"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_202ao")
@@ -24,3 +25,6 @@ game_scene = NodePath("..")
 storage = NodePath("../Storage")
 
 [node name="Storage" parent="." instance=ExtResource("4_dyd3e")]
+
+[node name="SpaceManBoss" parent="." instance=ExtResource("5_f3m6q")]
+position = Vector2(19, -458)

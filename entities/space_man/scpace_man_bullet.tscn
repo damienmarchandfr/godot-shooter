@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6tm8ymlfw011"]
+
+[ext_resource type="Texture2D" uid="uid://ra6j4r5vx4v0" path="res://assets.png" id="1_neoji"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_glnt7"]
+radius = 11.0
+
+[node name="ScpaceManBullet" type="Area2D"]
+
+[node name="Red" type="Sprite2D" parent="."]
+texture = ExtResource("1_neoji")
+region_enabled = true
+region_rect = Rect2(547.391, 2265.35, 24.1149, 24.2029)
+
+[node name="Purple" type="Sprite2D" parent="."]
+texture = ExtResource("1_neoji")
+region_enabled = true
+region_rect = Rect2(554.377, 2300.32, 23.3776, 22.5669)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_glnt7")

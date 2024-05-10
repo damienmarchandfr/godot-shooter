@@ -37,6 +37,7 @@ func _process(delta):
 		
 	move_and_slide()
 	
+
 	if Input.is_action_pressed("fire"):
 		if $FireTimer.is_stopped():
 			fire()
@@ -51,7 +52,4 @@ func fire():
 	bullet.set_angle(current_angle)
 	game_scene.add_child(bullet)
 	storage.add_bullet(bullet)
-
-func back():
-	velocity = - velocity
 

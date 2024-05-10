@@ -4,37 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://ra6j4r5vx4v0" path="res://assets.png" id="1_v26gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qaoa7"]
-size = Vector2(4, 16)
+size = Vector2(3.99999, 6.00001)
 
 [node name="Bullet" type="Area2D" groups=["bullet"]]
 rotation = 1.5708
 script = ExtResource("1_2emij")
 
-[node name="Sprite1" type="Sprite2D" parent="."]
-visible = false
-rotation = -0.0345063
-texture = ExtResource("1_v26gx")
-region_enabled = true
-region_rect = Rect2(18.3188, 28.4711, 5.82388, 17.2636)
-
-[node name="Sprite2" type="Sprite2D" parent="."]
-visible = false
-rotation = -0.0184987
-texture = ExtResource("1_v26gx")
-region_enabled = true
-region_rect = Rect2(33.6854, 28.8429, 5.47282, 18.0063)
-
-[node name="Sprite3" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_v26gx")
-region_enabled = true
-region_rect = Rect2(48.3753, 29.4277, 4.78609, 17.1502)
-
-[node name="Sprite4" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_v26gx")
-region_enabled = true
-region_rect = Rect2(63.0246, 28.6037, 5.86827, 18.5384)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.42404e-06, -3.65771e-06)
 shape = SubResource("RectangleShape2D_qaoa7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v26gx")
+region_enabled = true
+region_rect = Rect2(98.2947, 106.945, 4.4593, 6.6214)

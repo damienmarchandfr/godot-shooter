@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4l2xx0baajk5"]
+
+[ext_resource type="Texture2D" uid="uid://ra6j4r5vx4v0" path="res://assets.png" id="1_c15h4"]
+[ext_resource type="Script" path="res://entities/space_man/space_man_boss.gd" id="1_rfevd"]
+[ext_resource type="Script" path="res://entities/space_man/RollingEyes.gd" id="2_h4r8m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r75ul"]
+radius = 568.0
+
+[node name="SpaceManBoss" type="Node2D"]
+script = ExtResource("1_rfevd")
+
+[node name="RollingEyes" type="Node2D" parent="."]
+script = ExtResource("2_h4r8m")
+
+[node name="LeftEye" type="Sprite2D" parent="RollingEyes"]
+position = Vector2(-48, -24)
+texture = ExtResource("1_c15h4")
+region_enabled = true
+region_rect = Rect2(24.2615, 2294.43, 72.1263, 78.1367)
+
+[node name="RightEye" type="Sprite2D" parent="RollingEyes"]
+position = Vector2(48, -24)
+texture = ExtResource("1_c15h4")
+region_enabled = true
+region_rect = Rect2(99.6843, 2301.88, 75.4342, 81.0791)
+
+[node name="EyesAngry" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.999996, -24)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("1_c15h4")
+region_enabled = true
+region_rect = Rect2(34.957, 2394.79, 107.634, 71.3755)
+
+[node name="EyesCry" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.999996, -24)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("1_c15h4")
+region_enabled = true
+region_rect = Rect2(33.6989, 2498.29, 119.892, 87.7026)
+
+[node name="Helmet" type="Sprite2D" parent="."]
+texture = ExtResource("1_c15h4")
+region_enabled = true
+region_rect = Rect2(223.456, 2184.64, 378.182, 416.364)
+
+[node name="KillZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("CircleShape2D_r75ul")
+
+[node name="HitCollision" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitCollision"]
+polygon = PackedVector2Array(-176, 48, -176, -88, -136, -144, -120, -136, -96, -168, -32, -192, 40, -192, 88, -168, 120, -136, 168, -136, 176, -64, 144, -56, 144, 16, 128, 56, 120, 72, 136, 128, 144, 152, 88, 184, -32, 200, -160, 160, -152, 128, -128, 104, -128, 64, -136, 48)
+
+[node name="TimerFlash" type="Timer" parent="."]
+wait_time = 0.08
+
+[node name="RollingEyesTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="BulletsSpawners" type="Node2D" parent="."]
+
+[node name="RedSpawner" type="Node2D" parent="BulletsSpawners"]
+position = Vector2(147, -115)
+
+[node name="PurpleSpawner" type="Node2D" parent="BulletsSpawners"]
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
+[connection signal="body_exited" from="KillZone" to="." method="_on_kill_zone_body_exited"]
+[connection signal="area_entered" from="HitCollision" to="." method="_on_hit_collision_area_entered"]
+[connection signal="timeout" from="TimerFlash" to="." method="_on_timer_flash_timeout"]
+[connection signal="timeout" from="RollingEyesTimer" to="." method="_on_rolling_eyes_timer_timeout"]
